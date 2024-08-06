@@ -8,3 +8,10 @@ create table student2 as (select *from hr.departments where 1=2)//copy only stru
 
 insert into student values(&department_id,&department_name,&manager_id,&location_id)
 // to input data using placeholders
+
+//to simlutaneosly insert data
+insert ALL
+into department (dep_id,dep_name) values(106,'biotech')
+into department (dep_id,dep_name) values(107,'bsc')
+into department (dep_id,dep_name) values(109,'btech')
+select * from dual
