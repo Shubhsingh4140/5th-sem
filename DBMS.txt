@@ -40,8 +40,8 @@ where salary between 10000 and 13000
 
 select first_name,salary
 from hr.employees
-where salary IN (10000,20000,30000,40000)
-
+  where salary IN (10000,20000,30000,40000)
+  
 
 
 select first_name,commission_pct
@@ -113,6 +113,8 @@ where department_id=10
 delete from student
 where department_id=10
 
+select * from user_constraints
+
 
 
 
@@ -127,3 +129,18 @@ write a query to add a column phone number of length 10 with default value as in
   update student
 set phone_no=9368591781
 where department_id=10
+
+ alter table student
+ modify phone_no number(11) // to modify column
+
+ alter table student
+drop column phone_no // to delete a column
+
+
+alter table student
+  add constraint ph12_ck check(length(phone_no)=10) 
+
+alter table student
+  drop constraint ph12_ck 
+
+
