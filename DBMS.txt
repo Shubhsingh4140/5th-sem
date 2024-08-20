@@ -15,3 +15,115 @@ into department (dep_id,dep_name) values(106,'biotech')
 into department (dep_id,dep_name) values(107,'bsc')
 into department (dep_id,dep_name) values(109,'btech')
 select * from dual
+
+
+
+select  first_name||' has a salary = '||salary as "Statement"
+from hr.employees
+
+
+select  'Dr. '||first_name||' '||last_name as Full_name,round((sysdate-hire_date)/365) as "Experience"
+from hr.employees
+
+select first_name||""||last_name as Full_name
+from hr.employees
+
+select first_name,salary
+from hr.employees
+where salary>12000
+
+
+select first_name,salary
+from hr.employees
+where salary between 10000 and 13000
+
+
+select first_name,salary
+from hr.employees
+where salary IN (10000,20000,30000,40000)
+
+
+
+select first_name,commission_pct
+from hr.employees
+where commission_pct IS NOT NULL
+
+
+select count(commission_pct)
+from hr.employees
+
+
+select count(NVL(commission_pct,0))
+from hr.employees
+
+select count(NVL(commission_pct,0))-count(commission_pct)
+from hr.employees
+
+select Max(salary),Min(salary),Avg(Salary),Sum(Salary)
+from hr.employees
+
+select max(salary),department_id
+from hr.employees
+group by department_id
+
+
+select first_name,salary
+from hr.employees
+where salary =(select max(salary) from hr.employees) 
+
+select first_name,salary
+from hr.employees 
+where first_name LIKE 'P%';
+
+
+select first_name,salary
+from hr.employees 
+where first_name LIKE 'J____';
+
+
+select first_name,salary
+from hr.employees 
+order by salary asc
+
+select first_name,salary
+from hr.employees 
+order by salary desc
+
+
+select first_name,salary
+from hr.employees 
+order by 1 desc
+
+
+
+select rownum,first_name,salary
+from hr.employees 
+
+
+select max(salary),avg(salary)
+from hr.employees
+group by department_id
+
+
+update student
+set  department_name='HR'
+where department_id=10
+
+
+delete from student
+where department_id=10
+
+
+
+
+truncate table table_name //use to delete all rows permanently
+
+write a query to add a column phone number of length 10 with default value as integer and constraint and length=10
+=>
+  alter table student
+  add phone_no number(10) default 0
+
+
+  update student
+set phone_no=9368591781
+where department_id=10
