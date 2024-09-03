@@ -143,4 +143,19 @@ alter table student
 alter table student
   drop constraint ph12_ck 
 
+insert all
+into product_master values('P00001','1.44floppy',5,'piece',100,20,525,500)
+into product_master values('P03453','monitors ',6,'piece',10,3,1200,1120)
+into product_master values('P06734','mouse',5,'piece',20,5,525,500)
+into product_master values('P07865','1.22floppy',5,'piece',100,20,525,500)
+into product_master values('P07868','Keyboard',2,'piece',10,3,3150,3050)
+into product_master values('P07885','Cd Drive' ,2.5,'piece',10,3,5250,5100)
+into product_master values('P07965','540 HDD',4,'piece',10,3,8400,8000)
+into product_master values('P07975','1.44 Drive',3,'piece',10,3,1050,1000)
+into product_master values('P08865','1.22 Drive',5,'piece',2,3,1050,1000)
+select *from dual
+
+update product_master
+set sell_price=9999
+where product_no='P03453'
 
