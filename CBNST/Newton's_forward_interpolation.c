@@ -20,7 +20,7 @@ float u_value(float u,int x){
     else{
         float answ=u;
         for(int i=1;i<x;i++){
-            answ*=(answ+i);
+            answ*=(answ-i);
 
         }
         return answ;
