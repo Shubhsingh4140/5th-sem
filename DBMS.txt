@@ -166,3 +166,76 @@ increment by 1
 maxvalue 1000
 nocycle;
 
+
+select sequence_3.nextval
+from user_sequences
+
+select sequence_3.currval
+from user_sequences
+
+
+
+
+insert all
+into student123 values(sequence_3.nextval,'ashish',18)
+into student123 values(sequence_3.nextval,'deepak',22)
+into student123 values(sequence_3.nextval,'shivam',21)
+into student123 values(sequence_3.nextval,'anil',17)
+select * from dual
+
+
+insert all
+into student123 values(sequence_3.nextval,'ansh',18)
+
+
+
+
+
+
+
+
+into student123 values(sequence_3.nextval,'deep',22)
+into student123 values(sequence_3.nextval,'shiv',21)
+into student123 values(sequence_3.nextval,'amit',17)
+select * from dual
+
+
+
+alter sequence sequence_3
+increment by 2 cannot alter starting value
+
+
+alter sequence sequence_3
+maxvalue 2000
+nocache
+
+
+since sequences is a sharable object therefore gaps can be there in cases of multisharing
+
+
+drop sequence sequence_3
+
+
+
+
+CREATE INDEX indexname
+ON TABLENAME (column1,column2)
+EXPLAIN PLAN FOR
+SELECT *
+FROM sample
+WHERE department_id=90
+
+
+
+select plan_table_output from table(DBMS_XPLAN.DISPLAY())
+
+
+
+CREATE INDEX sample_index
+ON sample (department_id)
+
+
+drop index sample_index
+
+
+create synonym emp for hr.employees
