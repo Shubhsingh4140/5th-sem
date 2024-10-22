@@ -159,3 +159,10 @@ update product_master
 set sell_price=9999
 where product_no='P03453'
 
+
+create sequence sequence_3
+start with 100
+increment by 1
+maxvalue 1000
+nocycle;
+
